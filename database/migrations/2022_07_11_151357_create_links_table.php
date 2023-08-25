@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->string('url');
-            $table->string('alias');
+            $table->string('url')->charset("utf8")->collation("utf8_bin")->nullable();
+            $table->string('alias')->charset("utf8")->collation("utf8_bin")->nullable();
             $table->timestamps();
         });
     }
